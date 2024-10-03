@@ -29,7 +29,10 @@ const CustomModal = ({ isOpen, onClose, content }: IProps) => {
   // I used React portal for the modal so that it is not contained in the container of the component that called it
   return ReactDOM.createPortal(
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-wrapper" onClick={(e) => e.stopPropagation()}>
+      <div
+        className="modal-wrapper transition-transform transform duration-300 ease-in-out scale-95 origin-center animate-modal-open"
+        onClick={(e) => e.stopPropagation()}
+      >
         <button className="close-button" onClick={onClose}>
           x
         </button>
