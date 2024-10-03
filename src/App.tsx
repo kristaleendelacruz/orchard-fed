@@ -1,6 +1,6 @@
 import LatestArticlesList from './components/LatestArticlesList';
 import MainArticle from './components/MainArticle';
-import data from './data/data.json';
+import data from './data/data.json'; // I defined the test data in data.json to simulate data populated from a CMS
 
 function App() {
   return (
