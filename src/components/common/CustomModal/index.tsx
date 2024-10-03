@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './Modal.css';
 
@@ -9,6 +9,21 @@ interface IProps {
 }
 
 const CustomModal = ({ isOpen, onClose, content }: IProps) => {
+  useEffect(() => {
+    if (isOpen) {
+      // Set overflow hidden when modal is opened
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Remove overflow setting is modal is closed
+      document.body.style.overflow = '';
+    }
+
+    // Cleanup function to remove body scroll lock on unmount
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return ReactDOM.createPortal(

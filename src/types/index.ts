@@ -9,3 +9,10 @@ export type ImageT = {
   srcLarge: string;
   alt: string;
 };
+
+export type ArticleT = {
+  id: number;
+  title: string;
+  content: string;
+  image: ImageT;
+};
