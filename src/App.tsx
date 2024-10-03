@@ -1,7 +1,12 @@
-import './App.css';
+import MainArticle from './components/MainArticle';
+import data from './data/data.json';
 
 function App() {
-  return <h1>Orchard FED test</h1>;
+  return (
+    <main className="w-full p-8 md:p-16">
+      <MainArticle {...data.answerBodyNeeds} />
+    </main>
+  );
 }
 
 export default App;
